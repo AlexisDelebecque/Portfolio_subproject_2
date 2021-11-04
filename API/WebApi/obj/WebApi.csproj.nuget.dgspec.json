@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj": {}
+    "C:\\Users\\depay\\Source\\Repos\\Portfolio_subproject_2\\API\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/DataServiceLib.csproj": {
+    "C:\\Users\\depay\\Source\\Repos\\Portfolio_subproject_2\\API\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/DataServiceLib.csproj",
-        "projectName": "DataServiceLib",
-        "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/DataServiceLib.csproj",
-        "packagesPath": "/home/adelebecque/.nuget/packages/",
-        "outputPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/obj/",
+        "projectUniqueName": "C:\\Users\\depay\\Source\\Repos\\Portfolio_subproject_2\\API\\WebApi\\WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "C:\\Users\\depay\\Source\\Repos\\Portfolio_subproject_2\\API\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\depay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\depay\\Source\\Repos\\Portfolio_subproject_2\\API\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adelebecque/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\depay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,75 +40,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "DotEnvFile": {
+            "DotNetEnv": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[5.0.10, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.10, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj",
-        "projectName": "WebApi",
-        "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj",
-        "packagesPath": "/home/adelebecque/.nuget/packages/",
-        "outputPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/adelebecque/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/DataServiceLib.csproj": {
-                "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/DataServiceLib/DataServiceLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "DotNetEnv": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             }
           },
           "imports": [
@@ -127,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
