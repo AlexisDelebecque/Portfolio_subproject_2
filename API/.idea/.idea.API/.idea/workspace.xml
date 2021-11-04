@@ -8,11 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a8baf1c-666e-404d-93ff-a799dee69325" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApi/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/.env.exemple" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/TitleEpisode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/PortfolioContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/TitleEpisodesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataServiceLib/obj/DataServiceLib.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataServiceLib/obj/DataServiceLib.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataServiceLib/obj/DataServiceLib.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataServiceLib/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataServiceLib/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib.runtimeconfig.dev.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/DataServiceLib.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +33,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/DataServiceLib/DataService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20RirYY98kThRTwik8U85YLI8yd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -120,7 +129,8 @@
       <updated>1636013999414</updated>
       <workItem from="1636014002210" duration="312000" />
       <workItem from="1636014345063" duration="2204000" />
-      <workItem from="1636017576088" duration="4389000" />
+      <workItem from="1636017576088" duration="5180000" />
+      <workItem from="1636046279272" duration="305000" />
     </task>
     <servers />
   </component>

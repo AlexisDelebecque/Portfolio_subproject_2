@@ -37,10 +37,6 @@
 /home/adelebecque/RiderProjects/Assignment4/WebApi/bin/Debug/net5.0/DataServiceLib.pdb
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/appsettings.Development.json
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/appsettings.json
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib.deps.json
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib.runtimeconfig.json
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib.runtimeconfig.dev.json
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/WebApi
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/WebApi.deps.json
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/WebApi.runtimeconfig.json
@@ -55,8 +51,6 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Npgsql.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DataServiceLib.pdb
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.csproj.AssemblyReference.cache
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.GeneratedMSBuildEditorConfig.editorconfig
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.AssemblyInfoInputs.cache
@@ -72,7 +66,5 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/ref/WebApi.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.pdb
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.genruntimeconfig.cache
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DotEnvFile.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DotNetEnv.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/FSharp.Core.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Sprache.dll
