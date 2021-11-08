@@ -13,6 +13,5 @@ namespace WebApi.Domain.Movie
         public string DeathYear { get; set; }
         public string PrimaryProfession { get; set; }
         public string KnownForTitles {get; set;}
-        public float Rating { get; set; }
     }
 }
