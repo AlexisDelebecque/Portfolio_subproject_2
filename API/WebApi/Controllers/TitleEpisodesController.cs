@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Attributes;
 using WebApi.Services;
 
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route(baseTitleEpisodesRoute)]
-    public class TitleEpisodesController: Controller
+    [Route(BaseTitleEpisodesRoute)]
+    public class TitleEpisodesController: ControllerBase
     {
-        private const string baseTitleEpisodesRoute = "api/title/episodes";
+        private const string BaseTitleEpisodesRoute = "api/title/episodes";
         private TitleEpisodesService _titleEpisodeService;
 
         public TitleEpisodesController()
@@ -15,6 +16,7 @@ namespace WebApi.Controllers
             _titleEpisodeService = new TitleEpisodesService();
         }
         
+        [Authorization]
         [HttpGet]
         public IActionResult GetTitleEpisodes()
         {

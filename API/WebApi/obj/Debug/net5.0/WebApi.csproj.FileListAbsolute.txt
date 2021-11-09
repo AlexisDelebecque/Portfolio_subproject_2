@@ -68,3 +68,12 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.genruntimeconfig.cache
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/DotNetEnv.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Sprache.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll

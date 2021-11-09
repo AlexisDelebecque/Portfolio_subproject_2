@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApi.Middleware;
 
 namespace WebApi
 {
@@ -23,6 +25,8 @@ namespace WebApi
             }
 
             app.UseRouting();
+            
+            app.UseJwtAuth();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
