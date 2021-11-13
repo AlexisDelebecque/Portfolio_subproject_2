@@ -9,12 +9,22 @@ namespace WebApi
 {
     public class PortfolioContext: DbContext
     {
+        public DbSet<TitleBasics> TitleBasics { get; set; }
+        public DbSet<NameBasics> NameBasics { get; set; }
+        public DbSet<OmdbData> OmdbDatas { get; set; }
+        public DbSet<Wi> Wi { get; set; }
         public DbSet<TitleEpisode> TitleEpisodes { get; set; }
+        public DbSet<TitleAkas> TitleAkas { get; set; }
+        public DbSet<TitleCrew> TitleCrews { get; set; }
+        public DbSet<TitlePrincipals> TitlePrincipals { get; set; }
+        public DbSet<TitleRatings> TitleRatings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<SearchHistory> SearchHistories { get; set; }
         public DbSet<TitleBookmark> TitleBookmarks { get; set; }
         public DbSet<NameBookmark> NameBookmarks { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

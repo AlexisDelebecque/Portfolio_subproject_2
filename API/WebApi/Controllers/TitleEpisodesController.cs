@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Attributes;
-using WebApi.Services;
+using WebApi.Services.Movie;
 
 namespace WebApi.Controllers
 {
@@ -9,19 +9,30 @@ namespace WebApi.Controllers
     public class TitleEpisodesController: ControllerBase
     {
         private const string BaseTitleEpisodesRoute = "api/title/episodes";
-        private TitleEpisodesService _titleEpisodeService;
+        private BusinessLayer _businessLayer;
 
         public TitleEpisodesController()
         {
-            _titleEpisodeService = new TitleEpisodesService();
+            _businessLayer = new BusinessLayer();
         }
         
         [Authorization]
         [HttpGet]
         public IActionResult GetTitleEpisodes()
         {
-            var titleEpisodes = _titleEpisodeService.GetTitleEpisodes();
+            var titleEpisodes = _businessLayer.GetTitleEpisodes();
             return Ok(titleEpisodes);
+        }
+
+        [HttpGet("{id:int}")]
+        public IActionResult GetTitleEpisode(int id)
+        {
+            var titleEpisode = _businessLayer.GetTitleEpisode(id);
+
+            if (titleEpisode == null)
+                return NotFound();
+
+            return Ok(titleEpisode);
         }
     }
 }
