@@ -5558,24 +5558,26 @@
     ]
   },
   "packageFolders": {
-    "/home/adelebecque/.nuget/packages/": {}
+    "C:\\Users\\depay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio2\\API\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj",
-      "packagesPath": "/home/adelebecque/.nuget/packages/",
-      "outputPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/",
+      "projectPath": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio2\\API\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\depay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio2\\API\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/adelebecque/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\depay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5633,7 +5635,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
