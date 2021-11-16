@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "WebApiTests": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DB": "imdb",
+        "HOST": "localhost",
+        "UID": "postgres",
+        "PWD": "SarahPalin"
+      }
+    }
+  }
+}

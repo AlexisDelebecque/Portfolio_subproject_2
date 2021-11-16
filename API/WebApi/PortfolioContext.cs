@@ -30,16 +30,27 @@ namespace WebApi
 
         public DbSet<SearchResultsPopularActorsCoPlayers> SearchResultsPopularActorsCoPlayers { get; set; }
 
+        private readonly string _connectionString;
+
+        public PortfolioContext(string connectionString = "")
+        {
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                _connectionString = $"host={Environment.GetEnvironmentVariable("HOST")};" +
+                                    $"db={Environment.GetEnvironmentVariable("DB")};" +
+                                    $"uid={Environment.GetEnvironmentVariable("UID")};" +
+                                    $"pwd={Environment.GetEnvironmentVariable("PWD")}";
+            } else 
+                _connectionString = connectionString;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
 
             optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
             optionsBuilder.EnableSensitiveDataLogging();
-            optionsBuilder.UseNpgsql($"host={Environment.GetEnvironmentVariable("HOST")};" +
-                                     $"db={Environment.GetEnvironmentVariable("DB")};" +
-                                     $"uid={Environment.GetEnvironmentVariable("UID")};" +
-                                     $"pwd={Environment.GetEnvironmentVariable("PWD")}");
+            optionsBuilder.UseNpgsql(_connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

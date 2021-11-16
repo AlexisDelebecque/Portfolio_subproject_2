@@ -16,7 +16,7 @@ namespace WebApi.Controllers
             _titleEpisodeService = new TitleEpisodesService();
         }
         
-        [Authorization]
+        
         [HttpGet]
         public IActionResult GetTitleEpisodes()
         {

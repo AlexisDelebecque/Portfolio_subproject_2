@@ -7,17 +7,17 @@ namespace WebApi.Services.FunctionService
 {
     public class FunctionService
     {
-        private PortfolioContext _ctx; 
+        private readonly PortfolioContext _ctx; 
         //Skal bare indsætte _ctx i alle nedenstående, samt tingene i contexten og domæneobjekterne.
-        public FunctionService()
+        public FunctionService(string connectionString = "")
         {
-            _ctx = new PortfolioContext();
+            _ctx = new PortfolioContext(connectionString);
         }
 
         //Connectionstring is host, db, uid & pwd
         //all methods where private static in earlier program, also had to change ctx from readonly, as we need to access it. 
         //namebasics.rating does not exist. This function will probably only work when rating is present. Maybe alter table in start or handle exception. 
-        public List<SearchResultsPopularActorsCoPlayers> SearchForPopularActorsCoPlayers(string connectionString, string actorId)
+        public List<SearchResultsPopularActorsCoPlayers> SearchForPopularActorsCoPlayers(string actorId)
         {
             Console.WriteLine("Search Results Popular Coplayers by Id");
             //var ctx = new NorthwindContex(connectionString);
@@ -34,7 +34,7 @@ namespace WebApi.Services.FunctionService
             }
             return searchResultsPopularActorsCoPlayers;
         }
-        public List<SearchResultRecommended> Recommended(string connectionString, string titleId)
+        public List<SearchResultRecommended> Recommended(string titleId)
         {
             Console.WriteLine("Search Results Recommended");
 
@@ -51,7 +51,7 @@ namespace WebApi.Services.FunctionService
             return searchResultsCoPlayers;
         }
 
-        public void FindRating(string connectionString, string actorId) //Shoudl return result probably, but does not return proper value right now.
+        public void FindRating(string actorId) //Shoudl return result probably, but does not return proper value right now.
         {
             Console.WriteLine("Search Results from Find Rating");
             
@@ -62,8 +62,7 @@ namespace WebApi.Services.FunctionService
             //return result; //dont remember why its void, need to check if output is faulty.
         }
 
-        public List<SearchResultStructuredActorSearch> StructuredActorSearch(string connectionString,
-             string str1, string str2, string str3, string str4)
+        public List<SearchResultStructuredActorSearch> StructuredActorSearch(string str1, string str2, string str3, string str4)
         {
             Console.WriteLine("Search Results from Structured Actor Search");
             
@@ -81,7 +80,7 @@ namespace WebApi.Services.FunctionService
             return searchResultsStructuredActorSearches;
         }
 
-        public List<SearchResultStructuredStringSearch> StructuredStringSearch(string connectionString, string userName, string str1, string str2, string str3, string str4)
+        public List<SearchResultStructuredStringSearch> StructuredStringSearch(string userName, string str1, string str2, string str3, string str4)
         {
             Console.WriteLine("Search Results from Structured String Search");
             
@@ -101,7 +100,7 @@ namespace WebApi.Services.FunctionService
         }
 
         //Måske bare starte med void funktioner.
-        public List<SearchResultsCoPlayers> FindCoPlayersByID(string connectionString, string id)
+        public List<SearchResultsCoPlayers> FindCoPlayersByID(string id)
         {
             Console.WriteLine("Search Results Coplayers by Id");
             
@@ -120,7 +119,7 @@ namespace WebApi.Services.FunctionService
             return searchResultsCoPlayers;
         }
 
-        public List<SearchResultsCoPlayers> FindCoPlayers(string connectionString, string actorName)
+        public List<SearchResultsCoPlayers> FindCoPlayers(string actorName)
         {
             Console.WriteLine("Search Results Coplayers");
             
@@ -137,7 +136,7 @@ namespace WebApi.Services.FunctionService
             return searchResultsCoPlayers;
         }
 
-        public List<SearchResultsPopularActorsInMovie> PopularActorsInMovieSearch(string connectionString, string titleId)
+        public List<SearchResultsPopularActorsInMovie> PopularActorsInMovieSearch(string titleId)
         {
             Console.WriteLine("Popular Actors In Movie " + titleId);
             var movieTitleId = titleId;
@@ -154,7 +153,7 @@ namespace WebApi.Services.FunctionService
             return searchResultsPopularActorsInMovies;
         }
 
-        public List<SearchResultExactMatch> ExactMatchSearch(string connectionString, params string[] words) //First input is connection, rest are list of input elements
+        public List<SearchResultExactMatch> ExactMatchSearch(params string[] words) //First input is connection, rest are list of input elements
         {
             Console.WriteLine("Exact Match");
             var query = "select * from exact_match('" + words[0] + "'";
@@ -182,7 +181,7 @@ namespace WebApi.Services.FunctionService
             return searchResultExactMatches;
         }
 
-        public List<SearchResultBestMatch> BestMatchSearch(string connectionString, params string[] words)
+        public List<SearchResultBestMatch> BestMatchSearch(params string[] words)
         {
             Console.WriteLine("Best Match");
             var query = "select * from best_match('" + words[0] + "'";
@@ -215,7 +214,7 @@ namespace WebApi.Services.FunctionService
         }
 
 
-        public void AddUser(string connectionString, string usersname, string userPassword, bool isUserAdmin)
+        public void AddUser(string usersname, string userPassword, bool isUserAdmin)
         {
             Console.WriteLine("ADO from Entity Framework");
 
@@ -228,7 +227,7 @@ namespace WebApi.Services.FunctionService
             Console.WriteLine("user added, also deez nuts");
         }
 
-        public void AddRating(string connectionString, string titleId, int vote, string user, string comment) //ratings function from sql
+        public void AddRating(string titleId, int vote, string user, string comment) //ratings function from sql
         {
             Console.WriteLine("Adding rating");
             
