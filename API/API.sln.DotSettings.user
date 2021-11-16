@@ -9,6 +9,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c753ffdb_002Dc1d9_002D4ed8_002Db745_002Db319af100d9f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UserServiceTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::5FA62692-F96B-4B61-BBB8-CC7964B36664::net5.0::WebApiTests.UserServiceTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::5FA62692-F96B-4B61-BBB8-CC7964B36664::net5.0::WebApiTests.NameBookmarkServiceTest.CreateNameBookmark_ValidData_CreteNameBookmarkAndReturnsNewObject&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	

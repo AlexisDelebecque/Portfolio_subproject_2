@@ -54,7 +54,30 @@
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/API.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleEpisodesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/TitleEpisodesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Release/net5.0/ref/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/ref/WebApi.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/NameBookmarkServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/NameBookmarkServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/RatingServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/RatingServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/SearchHistoryServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/SearchHistoryServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/TitleBookmarkServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/TitleBookmarkServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/UserServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/UserServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/UserUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/UserTest/UserUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApiTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApiTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApiTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/bin/Release/net5.0/WebApiTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/obj/Release/net5.0/WebApiTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +117,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/5f/d3a4a0d5/XunitTestCollectionRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/196/ThreadPool.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83d12132e3bd4174a465a838837cc23a14e00/6/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiTests/UserTest/UserServiceTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a925edfe5584632978e98fd8509cdf4d7a8/6a/415f1db9/ExceptionAggregator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/33/464bb6f4/XunitTestAssemblyRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/c3/16b60481/TestCollectionRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -208,6 +232,9 @@
       <workItem from="1636447841511" duration="31319000" />
       <workItem from="1636618089906" duration="7907000" />
       <workItem from="1636889938873" duration="13244000" />
+      <workItem from="1637053861428" duration="786000" />
+      <workItem from="1637057308940" duration="654000" />
+      <workItem from="1637060369913" duration="4952000" />
     </task>
     <servers />
   </component>

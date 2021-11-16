@@ -1,13 +1,13 @@
-using System;
-using System.Linq;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
 using Xunit;
 
-namespace WebApiTests
+namespace WebApiTests.UserTest
 {
     public class SearchHistoryServiceTest
     {
+        private const string UserName = "SearchHistoryUser";
+
         [Fact]
         public void SearchHistory_Object_HasDefaultValues()
         {
@@ -19,46 +19,46 @@ namespace WebApiTests
         [Fact]
         public void CreateSearchHistory_ValidData_CreteSearchHistoryAndReturnsNewObject()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var rating = service.CreateSearchHistory("test", "money");
-            Assert.Equal("test", rating.Username);
+            var rating = service.CreateSearchHistory(UserName, "money");
+            Assert.Equal(UserName, rating.Username);
             Assert.Equal("money", rating.SearchKey);
 
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(rating.Username, rating.SearchKey);
         }
         
         [Fact]
         public void CreateSearchHistory_ValidDataButAlreadyExisting_ReturnsNullObject()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory = service.CreateSearchHistory("test", "money");
-            var sameSearchHistory = service.CreateSearchHistory("test", "money");
+            var searchHistory = service.CreateSearchHistory(UserName, "money");
+            var sameSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.Null(sameSearchHistory);
 
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
         }
         
         [Fact]
         public void GetAllSearchHistories_ValidUsernameAndBasicPage_ReturnsFirstPage()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory1 = service.CreateSearchHistory("test", "money");
-            var searchHistory2 = service.CreateSearchHistory("test", "honey");
-            var searchHistory3 = service.CreateSearchHistory("test", "bendy");
-            var searchHistory4 = service.CreateSearchHistory("test", "johnny");
-            var searchHistory5 = service.CreateSearchHistory("test", "freddy");
-            var searchHistories = service.GetSearchHistories("test", 0, 10);
+            var searchHistory1 = service.CreateSearchHistory(UserName, "money");
+            var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
+            var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
+            var searchHistory4 = service.CreateSearchHistory(UserName, "johnny");
+            var searchHistory5 = service.CreateSearchHistory(UserName, "freddy");
+            var searchHistories = service.GetSearchHistories(UserName, 0, 10);
             Assert.Equal(5, searchHistories.Count);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory1.Username, searchHistory1.SearchKey);
             service.DeleteSearchHistory(searchHistory2.Username, searchHistory2.SearchKey);
             service.DeleteSearchHistory(searchHistory3.Username, searchHistory3.SearchKey);
@@ -69,18 +69,18 @@ namespace WebApiTests
         [Fact]
         public void GetAllSearchHistories_ValidUsernameAndOutsidePage_ReturnsEmptyList()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory1 = service.CreateSearchHistory("test", "money");
-            var searchHistory2 = service.CreateSearchHistory("test", "honey");
-            var searchHistory3 = service.CreateSearchHistory("test", "bendy");
-            var searchHistory4 = service.CreateSearchHistory("test", "johnny");
-            var searchHistory5 = service.CreateSearchHistory("test", "freddy");
-            var searchHistories = service.GetSearchHistories("test", 1, 10);
+            var searchHistory1 = service.CreateSearchHistory(UserName, "money");
+            var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
+            var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
+            var searchHistory4 = service.CreateSearchHistory(UserName, "johnny");
+            var searchHistory5 = service.CreateSearchHistory(UserName, "freddy");
+            var searchHistories = service.GetSearchHistories(UserName, 1, 10);
             Assert.Equal(0, searchHistories.Count);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory1.Username, searchHistory1.SearchKey);
             service.DeleteSearchHistory(searchHistory2.Username, searchHistory2.SearchKey);
             service.DeleteSearchHistory(searchHistory3.Username, searchHistory3.SearchKey);
@@ -91,18 +91,18 @@ namespace WebApiTests
         [Fact]
         public void GetAllSearchHistories_InValidUsername_ReturnsEmptyList()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory1 = service.CreateSearchHistory("test", "money");
-            var searchHistory2 = service.CreateSearchHistory("test", "honey");
-            var searchHistory3 = service.CreateSearchHistory("test", "bendy");
-            var searchHistory4 = service.CreateSearchHistory("test", "johnny");
-            var searchHistory5 = service.CreateSearchHistory("test", "freddy");
+            var searchHistory1 = service.CreateSearchHistory(UserName, "money");
+            var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
+            var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
+            var searchHistory4 = service.CreateSearchHistory(UserName, "johnny");
+            var searchHistory5 = service.CreateSearchHistory(UserName, "freddy");
             var searchHistories = service.GetSearchHistories("test2", 0, 10);
             Assert.Equal(0, searchHistories.Count);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory1.Username, searchHistory1.SearchKey);
             service.DeleteSearchHistory(searchHistory2.Username, searchHistory2.SearchKey);
             service.DeleteSearchHistory(searchHistory3.Username, searchHistory3.SearchKey);
@@ -113,89 +113,89 @@ namespace WebApiTests
         [Fact]
         public void GetSearchHistory_ValidUsernameAndSearchKey_ReturnsSearchHistoryObject()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var createSearchHistory = service.CreateSearchHistory("test", "money");
+            var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
-            var searchHistory = service.GetSearchHistory("test", "money");
-            Assert.Equal("test", searchHistory.Username);
+            var searchHistory = service.GetSearchHistory(UserName, "money");
+            Assert.Equal(UserName, searchHistory.Username);
             Assert.Equal("money", searchHistory.SearchKey);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
         }
         
         [Fact]
         public void GetSearchHistory_InvalidUsername_ReturnsNullObject()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var createSearchHistory = service.CreateSearchHistory("test", "money");
+            var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
             var searchHistory = service.GetSearchHistory("notExist", "money");
             Assert.Null(searchHistory);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(createSearchHistory.Username, createSearchHistory.SearchKey);
         }
         
         [Fact]
         public void GetSearchHistory_InvalidSearchKey_ReturnsNullObject()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var createSearchHistory = service.CreateSearchHistory("test", "money");
+            var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
-            var searchHistory = service.GetSearchHistory("test", "notExist");
+            var searchHistory = service.GetSearchHistory(UserName, "notExist");
             Assert.Null(searchHistory);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(createSearchHistory.Username, createSearchHistory.SearchKey);
         }
 
         [Fact]
         public void DeleteSearchHistory_ValidUsernameAndSearchKey_RemoveTheSearchHistory()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory = service.CreateSearchHistory("test", "money");
+            var searchHistory = service.CreateSearchHistory(UserName, "money");
             var result = service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
             Assert.True(result);
             searchHistory = service.GetSearchHistory(searchHistory.Username, searchHistory.SearchKey);
             Assert.Null(searchHistory);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
         }
 
         [Fact]
         public void DeleteSearchHistory_InvalidUsername_ReturnsFalse()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory = service.CreateSearchHistory("test", "money");
+            var searchHistory = service.CreateSearchHistory(UserName, "money");
             var result = service.DeleteSearchHistory("notExist", "money");
             Assert.False(result);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
         }
         
         [Fact]
         public void DeleteSearchHistory_InvalidSearchKey_ReturnsFalse()
         {
-            UserUtils.InitUser();
+            UserUtils.InitUser(UserName);
             var service = new SearchHistoryService();
-            var searchHistory = service.CreateSearchHistory("test", "money");
-            var result = service.DeleteSearchHistory("test", "notExist");
+            var searchHistory = service.CreateSearchHistory(UserName, "money");
+            var result = service.DeleteSearchHistory(UserName, "notExist");
             Assert.False(result);
             
             // cleanup
-            UserUtils.DeleteUser();
+            UserUtils.DeleteUser(UserName);
             service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
         }
     }
