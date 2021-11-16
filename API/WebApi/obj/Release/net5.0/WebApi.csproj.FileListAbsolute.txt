@@ -26,9 +26,6 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Sprache.dll
 =======
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Microsoft.OpenApi.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Npgsql.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
-/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Sprache.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -40,10 +37,7 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.AssemblyInfoInputs.cache
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.AssemblyInfo.cs
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
-=======
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.MvcApplicationPartsAssemblyInfo.cs
->>>>>>> feat: add doc swagger, add pagination Abstract, add test for user schema
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.MvcApplicationPartsAssemblyInfo.cache
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/staticwebassets/WebApi.StaticWebAssets.Manifest.cache
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/staticwebassets/WebApi.StaticWebAssets.xml

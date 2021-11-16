@@ -30,12 +30,12 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var ratings = _ratingService
+                var ratings = _userService
                     .GetRatings(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
-                    _ratingService.CountRatings(user.Username),
+                    _userService.CountRatings(user.Username),
                     ratings,
                     nameof(GetRatings)
                 ));

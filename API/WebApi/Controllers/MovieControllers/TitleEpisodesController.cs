@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
 using WebApi.Services.MovieServices;
 
@@ -6,22 +7,28 @@ namespace WebApi.Controllers.MovieControllers
 {
     [ApiController]
     [Route(BaseTitleEpisodesRoute)]
-    public class TitleEpisodesController: ControllerBase
+    public class TitleEpisodesController: APagesController
     {
         private const string BaseTitleEpisodesRoute = "api/title/episodes";
         private readonly MovieBusinessLayer _movieBusinessLayer;
 
-        public TitleEpisodesController()
+        public TitleEpisodesController(LinkGenerator linkGenerator): base(linkGenerator)
         {
             _movieBusinessLayer = new MovieBusinessLayer();
         }
         
-        [Authorization]
-        [HttpGet]
-        public IActionResult GetTitleEpisodes()
+        [HttpGet(Name = nameof(GetTitleEpisodes))]
+        public IActionResult GetTitleEpisodes([FromQuery]PagesQueryString pagesQueryString)
         {
-            var titleEpisodes = _movieBusinessLayer.GetTitleEpisodes();
-            return Ok(titleEpisodes);
+            var titleEpisodes = _movieBusinessLayer
+                .GetTitleEpisodes(pagesQueryString.Page, pagesQueryString.PageSize);
+            return Ok(CreatePagingResult(
+                pagesQueryString.Page,
+                pagesQueryString.PageSize,
+                _movieBusinessLayer.CountTitleEpisodes(),
+                titleEpisodes,
+                nameof(GetTitleEpisodes)
+            ));
         }
 
         [HttpGet("{id:int}")]

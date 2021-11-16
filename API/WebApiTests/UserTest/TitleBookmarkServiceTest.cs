@@ -20,7 +20,7 @@ namespace WebApiTests.UserTest
         public void CreateTitleBookmark_ValidData_CreateTitleBookmarkAndReturnsNewObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateTitleBookmark(UserName, "tt10111746");
             Assert.Equal(UserName, rating.Username);
             Assert.Equal("tt10111746", rating.TitleId);
@@ -34,7 +34,7 @@ namespace WebApiTests.UserTest
         public void CreateTitleBookmark_ValidDataButAlreadyExisting_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             var sameTitleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             Assert.Null(sameTitleBookmark);
@@ -48,7 +48,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndBasicPage_ReturnsFirstPage()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark1 = service.CreateTitleBookmark(UserName, "tt10111746");
             var titleBookmark2 = service.CreateTitleBookmark(UserName, "tt12490740");
             var titleBookmark3 = service.CreateTitleBookmark(UserName, "tt1310664");
@@ -70,7 +70,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndOutsidePage_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark1 = service.CreateTitleBookmark(UserName, "tt10111746");
             var titleBookmark2 = service.CreateTitleBookmark(UserName, "tt12490740");
             var titleBookmark3 = service.CreateTitleBookmark(UserName, "tt1310664");
@@ -92,7 +92,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_InValidUsername_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark1 = service.CreateTitleBookmark(UserName, "tt10111746");
             var titleBookmark2 = service.CreateTitleBookmark(UserName, "tt12490740");
             var titleBookmark3 = service.CreateTitleBookmark(UserName, "tt1310664");
@@ -114,7 +114,7 @@ namespace WebApiTests.UserTest
         public void GetTitleBookmark_ValidUsernameAndTitleId_ReturnsTitleBookmarkObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var createTitleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             Assert.NotNull(createTitleBookmark);
             var titleBookmark = service.GetTitleBookmark(UserName, "tt10111746");
@@ -130,7 +130,7 @@ namespace WebApiTests.UserTest
         public void GetTitleBookmark_InvalidUsername_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var createTitleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             Assert.NotNull(createTitleBookmark);
             var titleBookmark = service.GetTitleBookmark("notExist", "tt10111746");
@@ -145,7 +145,7 @@ namespace WebApiTests.UserTest
         public void GetTitleBookmark_InvalidTitleId_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var createTitleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             Assert.NotNull(createTitleBookmark);
             var titleBookmark = service.GetTitleBookmark(UserName, "notExist");
@@ -160,7 +160,7 @@ namespace WebApiTests.UserTest
         public void DeleteTitleBookmark_ValidUsernameAndTitleId_RemoveTheTitleBookmark()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateTitleBookmark(UserName, "tt10111746");
             var result = service.DeleteTitleBookmark(rating.Username, rating.TitleId);
             Assert.True(result);
@@ -175,7 +175,7 @@ namespace WebApiTests.UserTest
         public void DeleteTitleBookmark_InvalidUsername_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             var result = service.DeleteTitleBookmark("notExist", "tt10111746");
             Assert.False(result);
@@ -189,7 +189,7 @@ namespace WebApiTests.UserTest
         public void DeleteTitleBookmark_InvalidTitleId_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new TitleBookmarkService();
+            var service = new UserBusinessLayer();
             var titleBookmark = service.CreateTitleBookmark(UserName, "tt10111746");
             var result = service.DeleteTitleBookmark(UserName, "notExist");
             Assert.False(result);

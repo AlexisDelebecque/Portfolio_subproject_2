@@ -20,7 +20,7 @@ namespace WebApiTests.UserTest
         public void CreateSearchHistory_ValidData_CreteSearchHistoryAndReturnsNewObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateSearchHistory(UserName, "money");
             Assert.Equal(UserName, rating.Username);
             Assert.Equal("money", rating.SearchKey);
@@ -34,7 +34,7 @@ namespace WebApiTests.UserTest
         public void CreateSearchHistory_ValidDataButAlreadyExisting_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory = service.CreateSearchHistory(UserName, "money");
             var sameSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.Null(sameSearchHistory);
@@ -48,7 +48,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndBasicPage_ReturnsFirstPage()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory1 = service.CreateSearchHistory(UserName, "money");
             var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
             var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
@@ -70,7 +70,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndOutsidePage_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory1 = service.CreateSearchHistory(UserName, "money");
             var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
             var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
@@ -92,7 +92,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_InValidUsername_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory1 = service.CreateSearchHistory(UserName, "money");
             var searchHistory2 = service.CreateSearchHistory(UserName, "honey");
             var searchHistory3 = service.CreateSearchHistory(UserName, "bendy");
@@ -114,7 +114,7 @@ namespace WebApiTests.UserTest
         public void GetSearchHistory_ValidUsernameAndSearchKey_ReturnsSearchHistoryObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
             var searchHistory = service.GetSearchHistory(UserName, "money");
@@ -130,7 +130,7 @@ namespace WebApiTests.UserTest
         public void GetSearchHistory_InvalidUsername_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
             var searchHistory = service.GetSearchHistory("notExist", "money");
@@ -145,7 +145,7 @@ namespace WebApiTests.UserTest
         public void GetSearchHistory_InvalidSearchKey_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var createSearchHistory = service.CreateSearchHistory(UserName, "money");
             Assert.NotNull(createSearchHistory);
             var searchHistory = service.GetSearchHistory(UserName, "notExist");
@@ -160,7 +160,7 @@ namespace WebApiTests.UserTest
         public void DeleteSearchHistory_ValidUsernameAndSearchKey_RemoveTheSearchHistory()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory = service.CreateSearchHistory(UserName, "money");
             var result = service.DeleteSearchHistory(searchHistory.Username, searchHistory.SearchKey);
             Assert.True(result);
@@ -175,7 +175,7 @@ namespace WebApiTests.UserTest
         public void DeleteSearchHistory_InvalidUsername_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory = service.CreateSearchHistory(UserName, "money");
             var result = service.DeleteSearchHistory("notExist", "money");
             Assert.False(result);
@@ -189,7 +189,7 @@ namespace WebApiTests.UserTest
         public void DeleteSearchHistory_InvalidSearchKey_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new SearchHistoryService();
+            var service = new UserBusinessLayer();
             var searchHistory = service.CreateSearchHistory(UserName, "money");
             var result = service.DeleteSearchHistory(UserName, "notExist");
             Assert.False(result);

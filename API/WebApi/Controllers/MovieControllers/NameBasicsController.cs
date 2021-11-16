@@ -1,25 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Services.MovieServices;
 
 namespace WebApi.Controllers.MovieControllers
 {
     [ApiController]
     [Route(BaseNameBasicsRoute)]
-    public class NameBasicsController : Controller
+    public class NameBasicsController : APagesController
     {
         private const string BaseNameBasicsRoute = "api/title/name";
         private readonly MovieBusinessLayer _movieBusinessLayer;
 
-        public NameBasicsController()
+        public NameBasicsController(LinkGenerator linkGenerator): base(linkGenerator)
         {
             _movieBusinessLayer = new MovieBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetNameBasics()
+        [HttpGet(Name = nameof(GetNameBasics))]
+        public IActionResult GetNameBasics([FromQuery]PagesQueryString pagesQueryString)
         {
-            var nameBasics = _movieBusinessLayer.GetNameBasics();
-            return Ok(nameBasics);
+            var nameBasics = _movieBusinessLayer
+                .GetNameBasics(pagesQueryString.Page, pagesQueryString.PageSize);
+            return Ok(CreatePagingResult(
+                pagesQueryString.Page,
+                pagesQueryString.PageSize,
+                _movieBusinessLayer.CountNameBasics(),
+                nameBasics,
+                nameof(GetNameBasics)
+            ));
         }
 
         [HttpGet("{id:int}")]

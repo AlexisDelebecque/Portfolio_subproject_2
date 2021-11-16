@@ -22,7 +22,7 @@ namespace WebApiTests.UserTest
         public void CreateRating_ValidData_CreteRatingAndReturnsNewObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 6);
             Assert.Equal(UserName, rating.Username);
             Assert.Equal("tt10111746", rating.TitleId);
@@ -38,7 +38,7 @@ namespace WebApiTests.UserTest
         public void CreateRating_ValidDataButAlreadyExisting_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 3);
             var sameRating = service.CreateRating(UserName, "tt10111746", 4);
             Assert.Null(sameRating);
@@ -52,7 +52,7 @@ namespace WebApiTests.UserTest
         public void GetAllRatings_ValidUsernameAndBasicPage_ReturnsFirstPage()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating1 = service.CreateRating(UserName, "tt10111746", 3);
             var rating2 = service.CreateRating(UserName, "tt12490740", 4);
             var rating3 = service.CreateRating(UserName, "tt1310664", 5);
@@ -74,7 +74,7 @@ namespace WebApiTests.UserTest
         public void GetAllRatings_ValidUsernameAndOutsidePage_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating1 = service.CreateRating(UserName, "tt10111746", 3);
             var rating2 = service.CreateRating(UserName, "tt12490740", 4);
             var rating3 = service.CreateRating(UserName, "tt1310664", 5);
@@ -96,7 +96,7 @@ namespace WebApiTests.UserTest
         public void GetAllRatings_InValidUsername_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating1 = service.CreateRating(UserName, "tt10111746", 3);
             var rating2 = service.CreateRating(UserName, "tt12490740", 4);
             var rating3 = service.CreateRating(UserName, "tt1310664", 5);
@@ -118,7 +118,7 @@ namespace WebApiTests.UserTest
         public void GetRating_ValidUsernameAndTitleId_ReturnsRatingObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var createRating = service.CreateRating(UserName, "tt0327418", 3);
             Assert.NotNull(createRating);
             var rating = service.GetRating(UserName, "tt0327418");
@@ -136,7 +136,7 @@ namespace WebApiTests.UserTest
         public void GetRating_InvalidUsername_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var createRating = service.CreateRating(UserName, "tt0327418", 3);
             Assert.NotNull(createRating);
             var ratings = service.GetRating("notExist", "tt0327418");
@@ -151,7 +151,7 @@ namespace WebApiTests.UserTest
         public void GetRating_InvalidTitleId_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var createRating = service.CreateRating(UserName, "tt0327418", 3);
             Assert.NotNull(createRating);
             var ratings = service.GetRating(UserName, "notExist");
@@ -166,7 +166,7 @@ namespace WebApiTests.UserTest
         public void DeleteRating_ValidUsernameAndTitleId_RemoveTheRating()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 5);
             var result = service.DeleteRating(rating.Username, rating.TitleId);
             Assert.True(result);
@@ -181,7 +181,7 @@ namespace WebApiTests.UserTest
         public void DeleteRating_InvalidUsername_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 5);
             var result = service.DeleteRating("notExist", "tt10111746");
             Assert.False(result);
@@ -195,7 +195,7 @@ namespace WebApiTests.UserTest
         public void DeleteRating_InvalidTitleId_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 5);
             var result = service.DeleteRating(UserName, "notExist");
             Assert.False(result);
@@ -209,7 +209,7 @@ namespace WebApiTests.UserTest
         public void UpdateRating_NewRateAndComment_UpdateWithNewValues()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 2);
 
             var result = service.UpdateRating(rating.Username, rating.TitleId, 4, "UpdatedComment");
@@ -229,7 +229,7 @@ namespace WebApiTests.UserTest
         public void UpdateRating_InvalidUsername_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 5);
             var result = service.UpdateRating("notExist", "tt10111746", 10, "UpdateComment");
             Assert.False(result);
@@ -243,7 +243,7 @@ namespace WebApiTests.UserTest
         public void UpdateRating_InvalidTitleId_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new RatingService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateRating(UserName, "tt10111746", 5);
             var result = service.UpdateRating(UserName, "notExist", 10, "UpdateComment");
             Assert.False(result);

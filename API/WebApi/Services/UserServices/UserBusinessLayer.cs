@@ -14,14 +14,9 @@ namespace WebApi.Services.UserServices
             return _ctx.Users.FirstOrDefault(x => x.Username == username);
         }
 
-        public User GetUserByCredentials(string username, string password)
-        {
-            return _ctx.Users.FirstOrDefault(x => x.Username == username && x.Password == password);
-        }
-        
         public User CreateUser(string username, string password, string salt)
         {
-            if (GetUserByCredentials(username, password) != null)
+            if (GetUser(username) != null)
                 return null;
             
             var user = new User()
@@ -55,17 +50,28 @@ namespace WebApi.Services.UserServices
 
             if (userToRemove == null)
                 return false;
-            
+
+            DeleteRatings(userToRemove.Username);
+            DeleteSearchHistories(userToRemove.Username);
+            DeleteNameBookmarks(userToRemove.Username);
+            DeleteTitleBookmarks(userToRemove.Username);
             _ctx.Users.Remove(userToRemove);
             return _ctx.SaveChanges() > 0;   
         }
         #endregion
         
         #region Rating
-        public IList<Rating> GetRatings(string username)
+        
+        public int CountRatings(string username)
+        {
+            return _ctx.Ratings.Count(x => x.Username == username);
+        }
+        
+        public IList<Rating> GetRatings(string username, int page, int pageSize)
         {
             return _ctx.Ratings
                 .Where(x => x.Username == username)
+                .Skip(page * pageSize).Take(pageSize)
                 .ToList();
         }
 
@@ -103,6 +109,18 @@ namespace WebApi.Services.UserServices
             _ctx.Ratings.Remove(rating);
             return _ctx.SaveChanges() > 0;
         }
+        public bool DeleteRatings(string username)
+        {
+            var ratings = _ctx.Ratings
+                .Where(x => x.Username == username)
+                .ToList();
+
+            foreach (var rating in ratings)
+            {
+                _ctx.Ratings.Remove(rating);
+            }
+            return _ctx.SaveChanges() > 0;
+        }
 
         public bool UpdateRating(string username, string titleId, int rate, string comment = null)
         {
@@ -119,10 +137,17 @@ namespace WebApi.Services.UserServices
         #endregion
         
         #region SearchHistory
-        public IList<SearchHistory> GetSearchHistories(string username)
+        
+        public int CountSearchHistories(string username)
+        {
+            return _ctx.SearchHistories.Count(x => x.Username == username);
+        }
+        
+        public IList<SearchHistory> GetSearchHistories(string username, int page, int pageSize)
         {
             return _ctx.SearchHistories
                 .Where(x => x.Username == username)
+                .Skip(page * pageSize).Take(pageSize)
                 .ToList();
         }
         
@@ -158,13 +183,34 @@ namespace WebApi.Services.UserServices
             _ctx.SearchHistories.Remove(searchHistoryToRemove);
             return _ctx.SaveChanges() > 0;
         }
+        
+        public bool DeleteSearchHistories(string username)
+        {
+            var searchHistories = _ctx.SearchHistories
+                .Where(x => x.Username == username)
+                .ToList();
+
+            foreach (var searchHistory in searchHistories)
+            {
+                _ctx.SearchHistories.Remove(searchHistory);
+            }
+            return _ctx.SaveChanges() > 0;
+        }
+        
         #endregion
         
         #region NameBookmark
-        public IList<NameBookmark> GetNameBookmarks(string username)
+
+        public int CountNameBookmarks(string username)
+        {
+            return _ctx.NameBookmarks.Count(x => x.Username == username);
+        }
+
+        public IList<NameBookmark> GetNameBookmarks(string username, int page, int pageSize)
         {
             return _ctx.NameBookmarks
                 .Where(x => x.Username == username)
+                .Skip(page * pageSize).Take(pageSize)
                 .ToList();
         }
 
@@ -200,13 +246,34 @@ namespace WebApi.Services.UserServices
             _ctx.NameBookmarks.Remove(nameBookmarkToRemove);
             return _ctx.SaveChanges() > 0;
         }
+        
+        public bool DeleteNameBookmarks(string username)
+        {
+            var nameBookmarks = _ctx.NameBookmarks
+                .Where(x => x.Username == username)
+                .ToList();
+
+            foreach (var nameBookmark in nameBookmarks)
+            {
+                _ctx.NameBookmarks.Remove(nameBookmark);
+            }
+            return _ctx.SaveChanges() > 0;
+        }
+        
         #endregion
         
         #region TitleBookmark
-        public IList<TitleBookmark> GetTitleBookmarks(string username)
+        
+        public int CountTitleBookmarks(string username)
+        {
+            return _ctx.TitleBookmarks.Count(x => x.Username == username);
+        }
+        
+        public IList<TitleBookmark> GetTitleBookmarks(string username, int page, int pageSize)
         {
             return _ctx.TitleBookmarks
                 .Where(x => x.Username == username)
+                .Skip(page * pageSize).Take(pageSize)
                 .ToList();
         }
 
@@ -242,6 +309,20 @@ namespace WebApi.Services.UserServices
             _ctx.TitleBookmarks.Remove(titleBookmarkToRemove);
             return _ctx.SaveChanges() > 0;
         }
+        
+        public bool DeleteTitleBookmarks(string username)
+        {
+            var titleBookmarks = _ctx.TitleBookmarks
+                .Where(x => x.Username == username)
+                .ToList();
+
+            foreach (var titleBookmark in titleBookmarks)
+            {
+                _ctx.TitleBookmarks.Remove(titleBookmark);
+            }
+            return _ctx.SaveChanges() > 0;
+        }
+        
         #endregion
     }
 }

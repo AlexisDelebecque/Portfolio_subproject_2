@@ -10,9 +10,16 @@ namespace WebApi.Services.MovieServices
         private readonly PortfolioContext _ctx = new();
 
         #region NameBasics
-        public IList<NameBasics> GetNameBasics()
+        
+        public int CountNameBasics()
         {
-            return _ctx.NameBasics.ToList();
+            return _ctx.NameBasics.Count();
+        }
+        
+        // Get All NameBasic
+        public IList<NameBasics> GetNameBasics(int page, int pageSize)
+        {
+            return _ctx.NameBasics.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
         // Get One NameBasics
@@ -23,12 +30,18 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region OmdbDatas
-        // Get All OmdbData
-        public IList<OmdbData> GetOmdbDatas()
+        
+        public int CountOmdbDatas()
         {
-            return _ctx.OmdbDatas.ToList();
+            return _ctx.OmdbDatas.Count();
         }
-
+        
+        // Get All OmdbData
+        public IList<OmdbData> GetOmdbDatas(int page, int pageSize)
+        {
+            return _ctx.OmdbDatas.Skip(page * pageSize).Take(pageSize).ToList();
+        }
+        
         // Get One OmdbData
         public OmdbData GetOmdbData(int id)
         {
@@ -37,12 +50,18 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitleBasics
-        // Get All TitleBasics
-        public IList<TitleBasics> GetTitleBasics()
+        
+        public int CountTitleBasics()
         {
-            return _ctx.TitleBasics.ToList();
+            return _ctx.TitleBasics.Count();
         }
-
+        
+        // Get All TitleBasics
+        public IList<TitleBasics> GetTitleBasics(int page, int pageSize)
+        {
+            return _ctx.TitleBasics.Skip(page * pageSize).Take(pageSize).ToList();
+        }
+        
         // Get One TitleBasic
         public TitleBasics GetTitleBasic(int id)
         {
@@ -51,12 +70,18 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitleAkas
-        // Get All TitleBasics
-        public IList<TitleAkas> GetTitleAkas()
+        
+        public int CountTitleAkas()
         {
-            return _ctx.TitleAkas.ToList();
+            return _ctx.TitleAkas.Count();
         }
-
+        
+        // Get All TitleAkas
+        public IList<TitleAkas> GetTitleAkas(int page, int pageSize)
+        {
+            return _ctx.TitleAkas.Skip(page * pageSize).Take(pageSize).ToList();
+        }
+        
         // Get One TitleBasic
         public TitleAkas GetTitleAka(int id)
         {
@@ -65,12 +90,18 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitleCrew
-        // Get All TitleCrew
-        public IList<TitleCrew> GetTitleCrews()
+        
+        public int CountTitleCrews()
         {
-            return _ctx.TitleCrews.ToList();
+            return _ctx.TitleCrews.Count();
         }
-
+        
+        // Get All TitleCrews
+        public IList<TitleCrew> GetTitleCrews(int page, int pageSize)
+        {
+            return _ctx.TitleCrews.Skip(page * pageSize).Take(pageSize).ToList();
+        }
+        
         // Get One TitleCrew
         public TitleCrew GetTitleCrew(int id)
         {
@@ -79,11 +110,16 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitleEpisodes
-        // Get All TitleEpisodes
-
-        public IList<TitleEpisode> GetTitleEpisodes()
+        
+        public int CountTitleEpisodes()
         {
-            return _ctx.TitleEpisodes.ToList();
+            return _ctx.TitleEpisodes.Count();
+        }
+        
+        // Get All TitleEpisodes
+        public IList<TitleEpisode> GetTitleEpisodes(int page, int pageSize)
+        {
+            return _ctx.TitleEpisodes.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
         // Get One TitlePrincipals
@@ -94,10 +130,16 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitlePrincipals
-        // Get All TitlePrincipals
-        public IList<TitlePrincipals> GetTitlePrincipals()
+        
+        public int CountTitlePrincipals()
         {
-            return _ctx.TitlePrincipals.ToList();
+            return _ctx.TitlePrincipals.Count();
+        }
+        
+        // Get All TitlePrincipals
+        public IList<TitlePrincipals> GetTitlePrincipals(int page, int pageSize)
+        {
+            return _ctx.TitlePrincipals.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
         // Get One TitlePrincipals
@@ -108,10 +150,16 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region TitleRatings
-        // Get All TitleRating
-        public IList<TitleRatings> GetTitleRatings()
+        
+        public int CountTitleRatings()
         {
-            return _ctx.TitleRatings.ToList();
+            return _ctx.TitleRatings.Count();
+        }
+        
+        // Get All TitleRating
+        public IList<TitleRatings> GetTitleRatings(int page, int pageSize)
+        {
+            return _ctx.TitleRatings.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
         // Get One TitleBasic
@@ -122,11 +170,16 @@ namespace WebApi.Services.MovieServices
         #endregion
 
         #region Wi
+        
+        public int CountWis()
+        {
+            return _ctx.Wi.Count();
+        }
 
         // Get All Wi
-        public IList<Wi> GetWis()
+        public IList<Wi> GetWis(int page, int pageSize)
         {
-            return _ctx.Wi.ToList();
+            return _ctx.Wi.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
         // Get One OmdbData

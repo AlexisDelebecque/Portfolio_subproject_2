@@ -20,7 +20,7 @@ namespace WebApiTests.UserTest
         public void CreateNameBookmark_ValidData_CreteNameBookmarkAndReturnsNewObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateNameBookmark(UserName, "nm9041227");
             Assert.Equal(UserName, rating.Username);
             Assert.Equal("nm9041227", rating.NameId);
@@ -34,7 +34,7 @@ namespace WebApiTests.UserTest
         public void CreateNameBookmark_ValidDataButAlreadyExisting_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             var sameNameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             Assert.Null(sameNameBookmark);
@@ -48,7 +48,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndBasicPage_ReturnsFirstPage()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark1 = service.CreateNameBookmark(UserName, "nm9041227");
             var nameBookmark2 = service.CreateNameBookmark(UserName, "nm7172762");
             var nameBookmark3 = service.CreateNameBookmark(UserName, "nm0933988");
@@ -70,7 +70,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_ValidUsernameAndOutsidePage_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark1 = service.CreateNameBookmark(UserName, "nm9041227");
             var nameBookmark2 = service.CreateNameBookmark(UserName, "nm7172762");
             var nameBookmark3 = service.CreateNameBookmark(UserName, "nm0933988");
@@ -92,7 +92,7 @@ namespace WebApiTests.UserTest
         public void GetAllSearchHistories_InValidUsername_ReturnsEmptyList()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark1 = service.CreateNameBookmark(UserName, "nm9041227");
             var nameBookmark2 = service.CreateNameBookmark(UserName, "nm7172762");
             var nameBookmark3 = service.CreateNameBookmark(UserName, "nm0933988");
@@ -114,7 +114,7 @@ namespace WebApiTests.UserTest
         public void GetNameBookmark_ValidUsernameAndNameId_ReturnsNameBookmarkObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var createNameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             Assert.NotNull(createNameBookmark);
             var nameBookmark = service.GetNameBookmark(UserName, "nm9041227");
@@ -130,7 +130,7 @@ namespace WebApiTests.UserTest
         public void GetNameBookmark_InvalidUsername_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var createNameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             Assert.NotNull(createNameBookmark);
             var nameBookmark = service.GetNameBookmark("notExist", "nm9041227");
@@ -145,7 +145,7 @@ namespace WebApiTests.UserTest
         public void GetNameBookmark_InvalidNameId_ReturnsNullObject()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var createNameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             Assert.NotNull(createNameBookmark);
             var nameBookmark = service.GetNameBookmark(UserName, "notExist");
@@ -160,7 +160,7 @@ namespace WebApiTests.UserTest
         public void DeleteNameBookmark_ValidUsernameAndNameId_RemoveTheNameBookmark()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var rating = service.CreateNameBookmark(UserName, "nm9041227");
             var result = service.DeleteNameBookmark(rating.Username, rating.NameId);
             Assert.True(result);
@@ -175,7 +175,7 @@ namespace WebApiTests.UserTest
         public void DeleteNameBookmark_InvalidUsername_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             var result = service.DeleteNameBookmark("notExist", "nm9041227");
             Assert.False(result);
@@ -189,7 +189,7 @@ namespace WebApiTests.UserTest
         public void DeleteNameBookmark_InvalidNameId_ReturnsFalse()
         {
             UserUtils.InitUser(UserName);
-            var service = new NameBookmarkService();
+            var service = new UserBusinessLayer();
             var nameBookmark = service.CreateNameBookmark(UserName, "nm9041227");
             var result = service.DeleteNameBookmark(UserName, "notExist");
             Assert.False(result);

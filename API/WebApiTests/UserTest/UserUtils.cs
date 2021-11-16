@@ -6,7 +6,7 @@ namespace WebApiTests.UserTest
     {
         public static void InitUser(string userName)
         {
-            var service = new UserService();
+            var service = new UserBusinessLayer();
             var user = service.GetUser(userName);
 
             if (user != null)
@@ -19,7 +19,7 @@ namespace WebApiTests.UserTest
         
         public static void DeleteUser(string userName)
         {
-            var service = new UserService();
+            var service = new UserBusinessLayer();
             var user = service.GetUser(userName);
 
             if (user != null)

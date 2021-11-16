@@ -29,12 +29,12 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var nameBookmarks = _nameBookmarkService
+                var nameBookmarks = _userService
                     .GetNameBookmarks(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
-                    _nameBookmarkService.CountNameBookmarks(user.Username),
+                    _userService.CountNameBookmarks(user.Username),
                     nameBookmarks,
                     nameof(GetNameBookmarks)
                 ));

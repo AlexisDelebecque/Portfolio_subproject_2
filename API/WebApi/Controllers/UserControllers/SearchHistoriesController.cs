@@ -28,12 +28,12 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var searchHistories = _searchHistoryService
+                var searchHistories = _userService
                     .GetSearchHistories(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
-                    _searchHistoryService.CountSearchHistories(user.Username),
+                    _userService.CountSearchHistories(user.Username),
                     searchHistories,
                     nameof(GetSearchHistories)
                 ));
