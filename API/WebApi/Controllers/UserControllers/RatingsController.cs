@@ -14,11 +14,11 @@ namespace WebApi.Controllers.UserControllers
     public class RatingsController: ControllerBase
     {
         private const string BaseUserRoute = "api/users/ratings";
-        private readonly RatingService _ratingService;
+        private readonly UserBusinessLayer _userService;
 
         public RatingsController()
         {
-            _ratingService = new RatingService();
+            _userService = new UserBusinessLayer();
         }
 
         [HttpGet]
@@ -28,7 +28,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_ratingService.GetRatings(user.Username));
+                return Ok(_userService.GetRatings(user.Username));
             }
             catch (Exception)
             {
@@ -43,7 +43,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_ratingService.GetRating(user.Username, titleId));
+                return Ok(_userService.GetRating(user.Username, titleId));
             }
             catch (Exception)
             {
@@ -58,7 +58,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var rating = _ratingService.CreateRating(user.Username, dto.TitleId, dto.Rate, dto.Comment);
+                var rating = _userService.CreateRating(user.Username, dto.TitleId, dto.Rate, dto.Comment);
                 
                 return Created($"{BaseUserRoute}/{rating.TitleId}", rating);
             }
@@ -75,7 +75,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var isSucceeded = _ratingService.UpdateRating(user.Username, titleId, dto.Rate, dto.Comment);
+                var isSucceeded = _userService.UpdateRating(user.Username, titleId, dto.Rate, dto.Comment);
 
                 if (!isSucceeded)
                     return NotFound();
@@ -94,7 +94,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var isSucceeded = _ratingService.DeleteRating(user.Username, titleId);
+                var isSucceeded = _userService.DeleteRating(user.Username, titleId);
 
                 if (!isSucceeded)
                     return NotFound();

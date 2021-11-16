@@ -13,11 +13,11 @@ namespace WebApi.Controllers.UserControllers
     public class NameBookmarksController: ControllerBase
     {
         private const string BaseUserRoute = "api/users/namebookmarks";
-        private readonly NameBookmarkService _nameBookmarkService;
+        private readonly UserBusinessLayer _userService;
 
         public NameBookmarksController()
         {
-            _nameBookmarkService = new NameBookmarkService();
+            _userService = new UserBusinessLayer();
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_nameBookmarkService.GetNameBookmarks(user.Username));
+                return Ok(_userService.GetNameBookmarks(user.Username));
             }
             catch (Exception)
             {
@@ -42,7 +42,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_nameBookmarkService.GetNameBookmark(user.Username, nameId));
+                return Ok(_userService.GetNameBookmark(user.Username, nameId));
             }
             catch (Exception)
             {
@@ -57,7 +57,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var rating = _nameBookmarkService.CreateNameBookmark(user.Username, dto.NameId);
+                var rating = _userService.CreateNameBookmark(user.Username, dto.NameId);
                 
                 return Created($"{BaseUserRoute}/{rating.NameId}", rating);
             }
@@ -74,7 +74,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var isSucceeded = _nameBookmarkService.DeleteNameBookmark(user.Username, nameId);
+                var isSucceeded = _userService.DeleteNameBookmark(user.Username, nameId);
 
                 if (!isSucceeded)
                     return NotFound();

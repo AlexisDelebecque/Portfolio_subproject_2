@@ -19,12 +19,12 @@ namespace WebApi.Controllers.UserControllers
     public class UsersController: ControllerBase
     {
         private const string BaseUserRoute = "api/users";
-        private readonly UserService _userService;
+        private readonly UserBusinessLayer _userService;
         private readonly ConfigurationUtils _configuration;
 
         public UsersController(IConfiguration configuration)
         {
-            _userService = new UserService();
+            _userService = new UserBusinessLayer();
             _configuration = new ConfigurationUtils(configuration);
         }
 

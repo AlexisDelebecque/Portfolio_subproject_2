@@ -24,14 +24,14 @@ namespace WebApi.Middleware
     public class JwtAuthMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly UserService _user;
+        private readonly UserBusinessLayer _user;
         private readonly ConfigurationUtils _configuration;
 
 
         public JwtAuthMiddleware(RequestDelegate next, IConfiguration configuration)
         {
             _next = next;
-            _user = new UserService();
+            _user = new UserBusinessLayer();
             _configuration = new ConfigurationUtils(configuration);
         }
 

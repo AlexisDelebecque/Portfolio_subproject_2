@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WebApi.Domain;
 using WebApi.Domain.UserDomain;
-using WebApi.Domain.Movie;
+using WebApi.Domain.MovieDomain;
 
 namespace WebApi
 {
