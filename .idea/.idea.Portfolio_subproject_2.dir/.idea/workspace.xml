@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1405d61f-320a-4961-af9f-c4e0caf3f66f" name="Changes" comment="" />
+    <list default="true" id="1405d61f-320a-4961-af9f-c4e0caf3f66f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/API/WebApi/Controllers/APagesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/WebApi/Utils/FormatUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/API/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/NameBookmarksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/NameBookmarksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/RatingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/RatingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/TitleBookmarksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Controllers/UserControllers/TitleBookmarksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Services/UserServices/NameBookmarkService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Services/UserServices/NameBookmarkService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Services/UserServices/RatingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Services/UserServices/RatingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Services/UserServices/TitleBookmarkService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Services/UserServices/TitleBookmarkService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/WebApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/bin/Debug/net5.0/ref/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/Debug/net5.0/ref/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/WebApi.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WebApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/API/WebApi/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636013915810</updated>
       <workItem from="1636013921377" duration="78000" />
+      <workItem from="1636889906855" duration="4000" />
     </task>
     <servers />
   </component>

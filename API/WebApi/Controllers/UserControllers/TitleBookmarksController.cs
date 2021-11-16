@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
+using WebApi.Utils;
 using WebApi.ViewModels;
 
 namespace WebApi.Controllers.UserControllers
@@ -11,24 +14,32 @@ namespace WebApi.Controllers.UserControllers
     [Authorization]
     [ApiController]
     [Route(BaseUserRoute)]
-    public class TitleBookmarksController: ControllerBase
+    public class TitleBookmarksController: APagesController
     {
         private const string BaseUserRoute = "api/users/titlebookmarks";
         private readonly UserBusinessLayer _userService;
 
-        public TitleBookmarksController()
+        public TitleBookmarksController(LinkGenerator linkGenerator) : base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetTitleBookmarks()
+        [HttpGet(Name = nameof(GetTitleBookmarks))]
+        public IActionResult GetTitleBookmarks([FromQuery]PagesQueryString pagesQueryString)
         {
             try
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_userService.GetTitleBookmarks(user.Username));
+                var titleBookmarks = _userService
+                    .GetTitleBookmarks(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                return Ok(CreatePagingResult(
+                    pagesQueryString.Page,
+                    pagesQueryString.PageSize,
+                    _userService.CountTitleBookmarks(user.Username),
+                    titleBookmarks,
+                    nameof(GetTitleBookmarks)
+                ));
             }
             catch (Exception)
             {

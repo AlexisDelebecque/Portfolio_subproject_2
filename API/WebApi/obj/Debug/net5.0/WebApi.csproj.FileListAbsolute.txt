@@ -77,3 +77,8 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Microsoft.OpenApi.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Debug/net5.0/WebApi.MvcApplicationPartsAssemblyInfo.cs

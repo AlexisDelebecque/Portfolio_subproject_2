@@ -1,25 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Services.MovieServices;
 
 namespace WebApi.Controllers.MovieControllers
 {
     [ApiController]
     [Route(BaseWiRoute)]
-    public class WiController : Controller
+    public class WiController : APagesController
     {
-        private const string BaseWiRoute = "title/wi";
+        private const string BaseWiRoute = "api/title/wi";
         private readonly MovieBusinessLayer _movieBusinessLayer;
 
-        public WiController()
+        public WiController(LinkGenerator linkGenerator) : base(linkGenerator)
         {
             _movieBusinessLayer = new MovieBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetWis()
+        [HttpGet(Name = nameof(GetWis))]
+        public IActionResult GetWis([FromQuery]PagesQueryString pagesQueryString)
         {
-            var wi = _movieBusinessLayer.GetWis();
-            return Ok(wi);
+            var wis = _movieBusinessLayer
+                .GetWis(pagesQueryString.Page, pagesQueryString.PageSize);
+            return Ok(CreatePagingResult(
+                pagesQueryString.Page,
+                pagesQueryString.PageSize,
+                _movieBusinessLayer.CountWis(),
+                wis,
+                nameof(GetWis)
+            ));
         }
 
         [HttpGet("{id:int}")]

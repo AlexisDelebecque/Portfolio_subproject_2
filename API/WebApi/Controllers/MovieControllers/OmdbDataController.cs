@@ -1,25 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Services.MovieServices;
 
 namespace WebApi.Controllers.MovieControllers
 {
     [ApiController]
     [Route(BaseOmdbDataRoute)]
-    public class OmdbDataController : Controller
+    public class OmdbDataController : APagesController
     {
         private const string BaseOmdbDataRoute = "api/title/omdb";
         private readonly MovieBusinessLayer _movieBusinessLayer;
 
-        public OmdbDataController()
+        public OmdbDataController(LinkGenerator linkGenerator): base(linkGenerator)
         {
             _movieBusinessLayer = new MovieBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetOmdbDatas()
+        [HttpGet(Name = nameof(GetOmdbDatas))]
+        public IActionResult GetOmdbDatas([FromQuery]PagesQueryString pagesQueryString)
         {
-            var omdbDatas = _movieBusinessLayer.GetOmdbDatas();
-            return Ok(omdbDatas);
+            var omdbDatas = _movieBusinessLayer
+                .GetOmdbDatas(pagesQueryString.Page, pagesQueryString.PageSize);
+            return Ok(CreatePagingResult(
+                pagesQueryString.Page,
+                pagesQueryString.PageSize,
+                _movieBusinessLayer.CountOmdbDatas(),
+                omdbDatas,
+                nameof(GetOmdbDatas)
+            ));
         }
 
         [HttpGet("{id:int}")]

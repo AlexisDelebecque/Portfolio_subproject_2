@@ -1,8 +1,10 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
+using WebApi.Utils;
 using WebApi.ViewModels;
 
 namespace WebApi.Controllers.UserControllers
@@ -10,24 +12,32 @@ namespace WebApi.Controllers.UserControllers
     [Authorization]
     [ApiController]
     [Route(BaseUserRoute)]
-    public class NameBookmarksController: ControllerBase
+    public class NameBookmarksController: APagesController
     {
         private const string BaseUserRoute = "api/users/namebookmarks";
         private readonly UserBusinessLayer _userService;
 
-        public NameBookmarksController()
+        public NameBookmarksController(LinkGenerator linkGenerator) : base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetNameBookmarks()
+        [HttpGet(Name = nameof(GetNameBookmarks))]
+        public IActionResult GetNameBookmarks([FromQuery]PagesQueryString pagesQueryString)
         {
             try
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_userService.GetNameBookmarks(user.Username));
+                var nameBookmarks = _userService
+                    .GetNameBookmarks(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                return Ok(CreatePagingResult(
+                    pagesQueryString.Page,
+                    pagesQueryString.PageSize,
+                    _userService.CountNameBookmarks(user.Username),
+                    nameBookmarks,
+                    nameof(GetNameBookmarks)
+                ));
             }
             catch (Exception)
             {

@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
@@ -10,24 +11,32 @@ namespace WebApi.Controllers.UserControllers
     [Authorization]
     [ApiController]
     [Route(BaseUserRoute)]
-    public class SearchHistoriesController: ControllerBase
+    public class SearchHistoriesController: APagesController
     {
         private const string BaseUserRoute = "api/users/searchhistories";
         private readonly UserBusinessLayer _userService;
 
-        public SearchHistoriesController()
+        public SearchHistoriesController(LinkGenerator linkGenerator): base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
         }
 
-        [HttpGet]
-        public IActionResult GetSearchHistories()
+        [HttpGet(Name = nameof(GetSearchHistories))]
+        public IActionResult GetSearchHistories([FromQuery]PagesQueryString pagesQueryString)
         {
             try
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_userService.GetSearchHistories(user.Username));
+                var searchHistories = _userService
+                    .GetSearchHistories(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                return Ok(CreatePagingResult(
+                    pagesQueryString.Page,
+                    pagesQueryString.PageSize,
+                    _userService.CountSearchHistories(user.Username),
+                    searchHistories,
+                    nameof(GetSearchHistories)
+                ));
             }
             catch (Exception)
             {
