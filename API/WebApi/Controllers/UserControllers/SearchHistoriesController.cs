@@ -13,11 +13,11 @@ namespace WebApi.Controllers.UserControllers
     public class SearchHistoriesController: ControllerBase
     {
         private const string BaseUserRoute = "api/users/searchhistories";
-        private readonly SearchHistoryService _searchHistoryService;
+        private readonly UserBusinessLayer _userService;
 
         public SearchHistoriesController()
         {
-            _searchHistoryService = new SearchHistoryService();
+            _userService = new UserBusinessLayer();
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_searchHistoryService.GetSearchHistories(user.Username));
+                return Ok(_userService.GetSearchHistories(user.Username));
             }
             catch (Exception)
             {
@@ -42,7 +42,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                return Ok(_searchHistoryService.GetSearchHistory(user.Username, searchKey));
+                return Ok(_userService.GetSearchHistory(user.Username, searchKey));
             }
             catch (Exception)
             {
@@ -57,7 +57,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var rating = _searchHistoryService.CreateSearchHistory(user.Username, dto.SearchKey);
+                var rating = _userService.CreateSearchHistory(user.Username, dto.SearchKey);
                 
                 return Created($"{BaseUserRoute}/{rating.SearchKey}", rating);
             }
@@ -74,7 +74,7 @@ namespace WebApi.Controllers.UserControllers
             {
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
-                var isSucceeded = _searchHistoryService.DeleteSearchHistory(user.Username, searchKey);
+                var isSucceeded = _userService.DeleteSearchHistory(user.Username, searchKey);
 
                 if (!isSucceeded)
                     return NotFound();

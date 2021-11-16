@@ -1,4 +1,4 @@
-namespace WebApi.Domain
+namespace WebApi.Domain.MovieDomain
 {
     public class TitleEpisode
     {

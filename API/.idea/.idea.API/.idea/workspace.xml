@@ -8,52 +8,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a8baf1c-666e-404d-93ff-a799dee69325" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApi/Attributes/AuthorizationAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/NameBookmarksController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/RatingsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/SearchHistoriesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/TitleBookmarksController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/UsersController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/UserDomain/NameBookmark.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/UserDomain/Rating.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/UserDomain/SearchHistory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/UserDomain/TitleBookmark.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Domain/UserDomain/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Middleware/JwtAuthMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/NameBookmarkService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/RatingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/SearchHistoryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/TitleBookmarkService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/UserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Utils/ConfigurationUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/Utils/PasswordUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/CreationNameBookmarkDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/CreationRatingDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/CreationSearchHistoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/CreationTitleBookmarkDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApi/ViewModels/UpdateRatingDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleEpisodesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/TitleEpisodesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/NameBasicsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/NameBasicsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/OmdbDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/OmdbDataController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleAkasController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitleAkasController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleBasicsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitleBasicsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleCrewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitleCrewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleEpisodesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitleEpisodesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitlePrincipalsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitlePrincipalsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/TitleRatingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/TitleRatingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/NameBookmarksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/NameBookmarksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/RatingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/RatingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/SearchHistoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/SearchHistoriesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/TitleBookmarksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/TitleBookmarksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/UserControllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/WiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/MovieControllers/WiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/NameBasics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/NameBasics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/OmdbData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/OmdbData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitleAkas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitleAkas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitleBasics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitleBasics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitleCrew.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitleCrew.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitleEpisode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitleEpisode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitlePrincipals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitlePrincipals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/TitleRatings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/TitleRatings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/Movie/Wi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Domain/MovieDomain/Wi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/User/NameBookmark.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/User/Ratings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/User/SearchHistory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/User/TitleBookmark.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Domain/User/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Middleware/JwtAuthMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Middleware/JwtAuthMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/PortfolioContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/PortfolioContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/Movie/BusinessLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Services/MovieServices/MovieBusinessLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/UserServices/NameBookmarkService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/UserServices/RatingService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/UserServices/SearchHistoryService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/UserServices/TitleBookmarkService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Services/UserServices/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Services/UserServices/UserBusinessLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/WebApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/WebApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net5.0/ref/WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/WebApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/ref/WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net5.0/ref/WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Release/net5.0/WebApi.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" afterDir="false" />
@@ -74,6 +71,41 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/a5/245dff8f/TestRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b831e75fe2a0431b84a0933948a5ee13357a8/7c/5624994a/XunitFrontController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b831e75fe2a0431b84a0933948a5ee13357a8/cb/2ba7084d/TestFrameworkExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/a3/5f98c61d/XunitTestCaseRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/a3/be7cdc2d/TestCaseRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/124f6a5780b748f29c8d3c8bab471b3efb00/69/2b973c5e/Executor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/e4/e2bc4720/XunitTestCase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/124f6a5780b748f29c8d3c8bab471b3efb00/c6/8f656d8d/XUnitRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/a6/54c36ae7/XunitTestMethodRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/1C2/Future.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b938043d271c482fab2e70a6b8b5c181133178/150/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/28/aedd5154/TestMethodRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d9c2a1aa37b0499587da013f26698e1660200/19/NpgsqlDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/1A7/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/1C5/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/9a/f49106e1/XunitTestClassRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/197/ThreadPool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/5c/ab4c3703/TestClassRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/5f/d3a4a0d5/XunitTestCollectionRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dee9da8f6d714c8999375532b393e2778d8400/196/ThreadPool.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83d12132e3bd4174a465a838837cc23a14e00/6/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a925edfe5584632978e98fd8509cdf4d7a8/6a/415f1db9/ExceptionAggregator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/33/464bb6f4/XunitTestAssemblyRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/c3/16b60481/TestCollectionRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/71/b9698892/TestAssemblyRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/14/2c10f174/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/34/cb41b9f5/XunitTestFrameworkExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/84/24c5b4b8/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/47/f86157d6/TestFrameworkExecutor`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dee9da8f6d714c8999375532b393e2778d8400/aa/62f2519c/Func`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/bb/cde82e7c/XunitTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b831e75fe2a0431b84a0933948a5ee13357a8/0d/40746723/Xunit2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/a2/1efe75af/Assert.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20RirYY98kThRTwik8U85YLI8yd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
