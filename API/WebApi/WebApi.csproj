@@ -13,7 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\FunctionsControllers\" />
       <Folder Include="Services\FunctionService\" />
     </ItemGroup>
 

@@ -58,16 +58,15 @@ namespace WebApi
             base.OnModelCreating(modelBuilder);
 
             //movie schema
-            modelBuilder.HasDefaultSchema("movie");
-            modelBuilder.Entity<TitleEpisode>().ToTable("titleepisode");
+            modelBuilder.Entity<TitleEpisode>().ToTable("titleepisode", "movie");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.TitleId).HasColumnName("parenttid");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.SeasonNumber).HasColumnName("seasonnumber");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.EpisodeNumber).HasColumnName("episodenumber");
             
             //user schema
-            modelBuilder.HasDefaultSchema("user");
-            modelBuilder.Entity<User>().ToTable("user");
+            //modelBuilder.HasDefaultSchema("user");
+            modelBuilder.Entity<User>().ToTable("user", "user");
             modelBuilder.Entity<User>().HasKey(x => x.Username);
             modelBuilder.Entity<User>().Property(x => x.Username).HasColumnName("username");
             modelBuilder.Entity<User>().Property(x => x.Password).HasColumnName("password");
