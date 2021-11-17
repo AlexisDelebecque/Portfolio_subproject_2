@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using WebApi.ViewModels;
 
 namespace WebApi.Controllers
 {
@@ -26,19 +27,19 @@ namespace WebApi.Controllers
         {
             _linkGenerator = linkGenerator;
         }
-        
-        public object CreatePagingResult(int page, int pageSize, int total, IEnumerable<object> model, string uriName)
+
+        protected PageViewModel<T> CreatePagingResult<T>(int page, int pageSize, int total, IEnumerable<T> model, string uriName)
         {
             var lastPage = (int)Math.Floor(total / (double)pageSize);
             var urlGenerator = GenerateGetUrlWithPage(uriName);
 
-            return new
+            return new PageViewModel<T>()
             {
-                total,
-                previous = urlGenerator(page - 1, pageSize, lastPage),
-                current = urlGenerator(page, pageSize, lastPage),
-                next = urlGenerator(page + 1, pageSize, lastPage),
-                items = model,
+                Total = total,
+                Previous = urlGenerator(page - 1, pageSize, lastPage),
+                Current = urlGenerator(page, pageSize, lastPage),
+                Next = urlGenerator(page + 1, pageSize, lastPage),
+                Items = model
             };
         }
         
