@@ -51,5 +51,10 @@ namespace WebApi.Controllers
                 return _linkGenerator.GetUriByName(HttpContext, uriName, new { page, pageSize });
             };
         }
+
+        protected string GetUrlObject(string uriName, object values)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, uriName, values);
+        }
     }
 }

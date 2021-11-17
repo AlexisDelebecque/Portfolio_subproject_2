@@ -1,12 +1,17 @@
 using System;
+using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
+using WebApi.Domain.MovieDomain;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
 using WebApi.Utils;
 using WebApi.ViewModels;
+using WebApi.ViewModels.ListViewModel.Movie;
+using WebApi.ViewModels.ListViewModel.User;
 
 namespace WebApi.Controllers.UserControllers
 {
@@ -17,10 +22,12 @@ namespace WebApi.Controllers.UserControllers
     {
         private const string BaseUserRoute = "api/users/ratings";
         private readonly UserBusinessLayer _userService;
+        private readonly IMapper _mapper;
 
-        public RatingsController(LinkGenerator linkGenerator) : base(linkGenerator)
+        public RatingsController(LinkGenerator linkGenerator, IMapper mapper) : base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
+            _mapper = mapper;
         }
 
         [HttpGet(Name = nameof(GetRatings))]
@@ -31,7 +38,8 @@ namespace WebApi.Controllers.UserControllers
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
                 var ratings = _userService
-                    .GetRatings(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                    .GetRatings(user.Username, pagesQueryString.Page, pagesQueryString.PageSize)
+                    .Select(CreateRatingListViewModel);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
@@ -46,7 +54,7 @@ namespace WebApi.Controllers.UserControllers
             }
         }
         
-        [HttpGet("{titleId}")]
+        [HttpGet("{titleId}", Name = nameof(GetRating))]
         public IActionResult GetRating(string titleId)
         {
             try
@@ -114,6 +122,13 @@ namespace WebApi.Controllers.UserControllers
             {
                 return Unauthorized();
             }
+        }
+        
+        private RatingListViewModel CreateRatingListViewModel(Rating rating)
+        {
+            var model = _mapper.Map<RatingListViewModel>(rating);
+            model.Url = GetUrlObject(nameof(GetRating), new {rating.TitleId});
+            return model;
         }
     }
 }

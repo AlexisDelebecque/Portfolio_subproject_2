@@ -1,10 +1,15 @@
 using System;
+using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
+using WebApi.Domain.MovieDomain;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
 using WebApi.ViewModels;
+using WebApi.ViewModels.ListViewModel.Movie;
+using WebApi.ViewModels.ListViewModel.User;
 
 namespace WebApi.Controllers.UserControllers
 {
@@ -15,10 +20,12 @@ namespace WebApi.Controllers.UserControllers
     {
         private const string BaseUserRoute = "api/users/searchhistories";
         private readonly UserBusinessLayer _userService;
+        private readonly IMapper _mapper;
 
-        public SearchHistoriesController(LinkGenerator linkGenerator): base(linkGenerator)
+        public SearchHistoriesController(LinkGenerator linkGenerator, IMapper mapper): base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
+            _mapper = mapper;
         }
 
         [HttpGet(Name = nameof(GetSearchHistories))]
@@ -29,7 +36,8 @@ namespace WebApi.Controllers.UserControllers
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
                 var searchHistories = _userService
-                    .GetSearchHistories(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                    .GetSearchHistories(user.Username, pagesQueryString.Page, pagesQueryString.PageSize)
+                    .Select(CreateSearchHistoryListViewModel);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
@@ -44,7 +52,7 @@ namespace WebApi.Controllers.UserControllers
             }
         }
         
-        [HttpGet("{searchKey}")]
+        [HttpGet("{searchKey}", Name = nameof(GetSearchHistory))]
         public IActionResult GetSearchHistory(string searchKey)
         {
             try
@@ -93,6 +101,13 @@ namespace WebApi.Controllers.UserControllers
             {
                 return Unauthorized();
             }
+        }
+        
+        private SearchHistoryListViewModel CreateSearchHistoryListViewModel(SearchHistory searchHistory)
+        {
+            var model = _mapper.Map<SearchHistoryListViewModel>(searchHistory);
+            model.Url = GetUrlObject(nameof(GetSearchHistory), new {searchHistory.SearchKey});
+            return model;
         }
     }
 }

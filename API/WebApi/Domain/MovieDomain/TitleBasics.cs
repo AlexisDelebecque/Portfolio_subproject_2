@@ -16,7 +16,7 @@
 
         public string EndYear { get; set; }
 
-        public int RuntimeMinutes { get; set; }
+        public int? RuntimeMinutes { get; set; }
 
         public string Genres { get; set; }
     }

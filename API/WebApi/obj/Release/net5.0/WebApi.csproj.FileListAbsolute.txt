@@ -48,3 +48,5 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/ref/WebApi.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.pdb
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/obj/Release/net5.0/WebApi.genruntimeconfig.cache
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/AutoMapper.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/bin/Release/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

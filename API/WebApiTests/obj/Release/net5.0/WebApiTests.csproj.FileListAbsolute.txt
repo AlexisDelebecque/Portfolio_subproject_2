@@ -128,3 +128,5 @@
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/obj/Release/net5.0/ref/WebApiTests.dll
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/obj/Release/net5.0/WebApiTests.pdb
 /home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/obj/Release/net5.0/WebApiTests.genruntimeconfig.cache
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/bin/Release/net5.0/AutoMapper.dll
+/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/bin/Release/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

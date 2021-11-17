@@ -2,7 +2,7 @@
 {
     public class TitlePrincipals
     {
-        public string Id { get; set; }
+        public string TitleId { get; set; }
         public int Ordering { get; set; }
         public string NameId { get; set; }
         public string Category { get; set; }

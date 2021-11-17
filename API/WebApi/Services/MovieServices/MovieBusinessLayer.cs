@@ -23,7 +23,7 @@ namespace WebApi.Services.MovieServices
         }
 
         // Get One NameBasics
-        public NameBasics GetNameBasic(int id)
+        public NameBasics GetNameBasic(string id)
         {
             return _ctx.NameBasics.Find(id);
         }
@@ -43,7 +43,7 @@ namespace WebApi.Services.MovieServices
         }
         
         // Get One OmdbData
-        public OmdbData GetOmdbData(int id)
+        public OmdbData GetOmdbData(string id)
         {
             return _ctx.OmdbDatas.Find(id);
         }
@@ -63,7 +63,7 @@ namespace WebApi.Services.MovieServices
         }
         
         // Get One TitleBasic
-        public TitleBasics GetTitleBasic(int id)
+        public TitleBasics GetTitleBasic(string id)
         {
             return _ctx.TitleBasics.Find(id);
         }
@@ -83,9 +83,9 @@ namespace WebApi.Services.MovieServices
         }
         
         // Get One TitleBasic
-        public TitleAkas GetTitleAka(int id)
+        public TitleAkas GetTitleAka(string titleId, int ordering)
         {
-            return _ctx.TitleAkas.Find(id);
+            return _ctx.TitleAkas.Find(titleId, ordering);
         }
         #endregion
 
@@ -103,7 +103,7 @@ namespace WebApi.Services.MovieServices
         }
         
         // Get One TitleCrew
-        public TitleCrew GetTitleCrew(int id)
+        public TitleCrew GetTitleCrew(string id)
         {
             return _ctx.TitleCrews.Find(id);
         }
@@ -123,7 +123,7 @@ namespace WebApi.Services.MovieServices
         }
 
         // Get One TitlePrincipals
-        public TitleEpisode GetTitleEpisode(int id)
+        public TitleEpisode GetTitleEpisode(string id)
         {
             return _ctx.TitleEpisodes.Find(id);
         }
@@ -143,9 +143,9 @@ namespace WebApi.Services.MovieServices
         }
 
         // Get One TitlePrincipals
-        public TitlePrincipals GetTitlePrincipal(int id)
+        public TitlePrincipals GetTitlePrincipal(string titleId, int ordering, string nameId)
         {
-            return _ctx.TitlePrincipals.Find(id);
+            return _ctx.TitlePrincipals.Find(titleId, ordering, nameId);
         }
         #endregion
 
@@ -163,7 +163,7 @@ namespace WebApi.Services.MovieServices
         }
 
         // Get One TitleBasic
-        public TitleRatings GetTitleRating(int id)
+        public TitleRatings GetTitleRating(string id)
         {
             return _ctx.TitleRatings.Find(id);
         }
@@ -183,9 +183,9 @@ namespace WebApi.Services.MovieServices
         }
 
         // Get One OmdbData
-        public Wi GetWi(int id)
+        public Wi GetWi(string titleId, string word, string field)
         {
-            return _ctx.Wi.Find(id);
+            return _ctx.Wi.Find(titleId, word, field);
         }
         #endregion
     }

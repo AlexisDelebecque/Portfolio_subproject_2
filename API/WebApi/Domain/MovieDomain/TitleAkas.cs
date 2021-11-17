@@ -2,7 +2,7 @@
 {
     public class TitleAkas
     {
-        public string Id { get; set; }
+        public string TitleId { get; set; }
         public int Ordering { get; set; }
         public string Title { get; set; }
         public string Region { get; set; }

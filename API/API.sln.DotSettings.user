@@ -1,16 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1a803aa6_002Dff7d_002D4606_002D87dd_002D32914ae0bccc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;WebApiTests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	
+	
+	
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c753ffdb_002Dc1d9_002D4ed8_002Db745_002Db319af100d9f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UserServiceTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Project Location="/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests" Presentation="&amp;lt;WebApiTests&amp;gt;" /&gt;
-&lt;/SessionState&gt;</s:String>
-	
-	
-	
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c753ffdb_002Dc1d9_002D4ed8_002Db745_002Db319af100d9f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UserServiceTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::5FA62692-F96B-4B61-BBB8-CC7964B36664::net5.0::WebApiTests.UserServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::5FA62692-F96B-4B61-BBB8-CC7964B36664::net5.0::WebApiTests.NameBookmarkServiceTest.CreateNameBookmark_ValidData_CreteNameBookmarkAndReturnsNewObject&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
 	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestRunner/EnvironmentVariablesIndexed/=DB/@EntryIndexedValue">portfolio</s:String>

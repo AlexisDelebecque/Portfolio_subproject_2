@@ -1,11 +1,17 @@
 using System;
+using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using WebApi.Attributes;
+using WebApi.Domain.MovieDomain;
 using WebApi.Domain.UserDomain;
 using WebApi.Services.UserServices;
 using WebApi.Utils;
 using WebApi.ViewModels;
+using WebApi.ViewModels.ListViewModel;
+using WebApi.ViewModels.ListViewModel.Movie;
+using WebApi.ViewModels.ListViewModel.User;
 
 namespace WebApi.Controllers.UserControllers
 {
@@ -16,10 +22,12 @@ namespace WebApi.Controllers.UserControllers
     {
         private const string BaseUserRoute = "api/users/namebookmarks";
         private readonly UserBusinessLayer _userService;
+        private readonly IMapper _mapper;
 
-        public NameBookmarksController(LinkGenerator linkGenerator) : base(linkGenerator)
+        public NameBookmarksController(LinkGenerator linkGenerator, IMapper mapper) : base(linkGenerator)
         {
             _userService = new UserBusinessLayer();
+            _mapper = mapper;
         }
 
         [HttpGet(Name = nameof(GetNameBookmarks))]
@@ -30,7 +38,8 @@ namespace WebApi.Controllers.UserControllers
                 if (Request.HttpContext.Items["User"] is not User user)
                     throw new ArgumentException("User not exist");
                 var nameBookmarks = _userService
-                    .GetNameBookmarks(user.Username, pagesQueryString.Page, pagesQueryString.PageSize);
+                    .GetNameBookmarks(user.Username, pagesQueryString.Page, pagesQueryString.PageSize)
+                    .Select(CreateNameBookmarkListViewModel);
                 return Ok(CreatePagingResult(
                     pagesQueryString.Page,
                     pagesQueryString.PageSize,
@@ -45,7 +54,7 @@ namespace WebApi.Controllers.UserControllers
             }
         }
         
-        [HttpGet("{nameId}")]
+        [HttpGet("{nameId}", Name = nameof(GetNameBookmark))]
         public IActionResult GetNameBookmark(string nameId)
         {
             try
@@ -94,6 +103,13 @@ namespace WebApi.Controllers.UserControllers
             {
                 return Unauthorized();
             }
+        }
+        
+        private NameBookmarkListViewModel CreateNameBookmarkListViewModel(NameBookmark nameBookmark)
+        {
+            var model = _mapper.Map<NameBookmarkListViewModel>(nameBookmark);
+            model.Url = GetUrlObject(nameof(GetNameBookmark), new {nameBookmark.NameId});
+            return model;
         }
     }
 }

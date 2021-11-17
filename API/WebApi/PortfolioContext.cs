@@ -43,7 +43,6 @@ namespace WebApi
             base.OnModelCreating(modelBuilder);
 
             //movie schema
-            // TitleBasics
             modelBuilder.Entity<TitleBasics>().ToTable("titlebasics", "movie");
             modelBuilder.Entity<TitleBasics>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<TitleBasics>().Property(x => x.TitleType).HasColumnName("titletype");
@@ -55,24 +54,23 @@ namespace WebApi
             modelBuilder.Entity<TitleBasics>().Property(x => x.RuntimeMinutes).HasColumnName("runtimeminutes");
             modelBuilder.Entity<TitleBasics>().Property(x => x.Genres).HasColumnName("genres");
 
-            // TitlePrincipals
             modelBuilder.Entity<TitlePrincipals>().ToTable("titleprincipals", "movie");
-            modelBuilder.Entity<TitlePrincipals>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<TitlePrincipals>().HasKey(x => new { x.TitleId, x.Ordering, x.NameId });
+            modelBuilder.Entity<TitlePrincipals>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<TitlePrincipals>().Property(x => x.Ordering).HasColumnName("ordering");
             modelBuilder.Entity<TitlePrincipals>().Property(x => x.NameId).HasColumnName("nameid");
             modelBuilder.Entity<TitlePrincipals>().Property(x => x.Category).HasColumnName("category");
             modelBuilder.Entity<TitlePrincipals>().Property(x => x.Job).HasColumnName("job");
             modelBuilder.Entity<TitlePrincipals>().Property(x => x.Characters).HasColumnName("characters");
 
-            // TitleCrew
             modelBuilder.Entity<TitleCrew>().ToTable("titlecrew", "movie");
             modelBuilder.Entity<TitleCrew>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<TitleCrew>().Property(x => x.Directors).HasColumnName("directors");
             modelBuilder.Entity<TitleCrew>().Property(x => x.Writers).HasColumnName("writers");
 
-            // TitleAkas
             modelBuilder.Entity<TitleAkas>().ToTable("titleakas", "movie");
-            modelBuilder.Entity<TitleAkas>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<TitleAkas>().HasKey(x => new { x.TitleId, x.Ordering });
+            modelBuilder.Entity<TitleAkas>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<TitleAkas>().Property(x => x.Ordering).HasColumnName("ordering");
             modelBuilder.Entity<TitleAkas>().Property(x => x.Title).HasColumnName("title");
             modelBuilder.Entity<TitleAkas>().Property(x => x.Region).HasColumnName("region");
@@ -81,20 +79,17 @@ namespace WebApi
             modelBuilder.Entity<TitleAkas>().Property(x => x.Attributes).HasColumnName("attributes");
             modelBuilder.Entity<TitleAkas>().Property(x => x.IsOriginalTitle).HasColumnName("isoriginaltitle");
 
-            // TitleEpisode
             modelBuilder.Entity<TitleEpisode>().ToTable("titleepisode", "movie");
-            modelBuilder.Entity<TitleEpisode>().Property(x => x.Id).HasColumnName("titleid");
-            modelBuilder.Entity<TitleEpisode>().Property(x => x.TitleId).HasColumnName("parenttid");
+            modelBuilder.Entity<TitleEpisode>().Property(x => x.Id).HasColumnName("episodeid");
+            modelBuilder.Entity<TitleEpisode>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.SeasonNumber).HasColumnName("seasonnumber");
             modelBuilder.Entity<TitleEpisode>().Property(x => x.EpisodeNumber).HasColumnName("episodenumber");
 
-            // TitleRatings 
             modelBuilder.Entity<TitleRatings>().ToTable("titleratings", "movie");
             modelBuilder.Entity<TitleRatings>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<TitleRatings>().Property(x => x.AverageRating).HasColumnName("averagerating");
             modelBuilder.Entity<TitleRatings>().Property(x => x.NumVotes).HasColumnName("numvotes");
 
-            // NameBasics
             modelBuilder.Entity<NameBasics>().ToTable("namebasics", "movie");
             modelBuilder.Entity<NameBasics>().Property(x => x.Id).HasColumnName("nameid");
             modelBuilder.Entity<NameBasics>().Property(x => x.PrimaryName).HasColumnName("primaryname");
@@ -103,22 +98,20 @@ namespace WebApi
             modelBuilder.Entity<NameBasics>().Property(x => x.PrimaryProfession).HasColumnName("primaryprofession");
             modelBuilder.Entity<NameBasics>().Property(x => x.KnownForTitles).HasColumnName("knownfortitles");
 
-            // Wi
             modelBuilder.Entity<Wi>().ToTable("wi", "movie");
-            modelBuilder.Entity<Wi>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<Wi>().HasKey(x => new { x.TitleId, x.Word, x.Field });
+            modelBuilder.Entity<Wi>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<Wi>().Property(x => x.Word).HasColumnName("word");
             modelBuilder.Entity<Wi>().Property(x => x.Field).HasColumnName("field");
             modelBuilder.Entity<Wi>().Property(x => x.Lexeme).HasColumnName("lexeme");
 
-            // OmdbDatas
             modelBuilder.Entity<OmdbData>().ToTable("omdb_data", "movie");
             modelBuilder.Entity<OmdbData>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<OmdbData>().Property(x => x.Poster).HasColumnName("poster");
             modelBuilder.Entity<OmdbData>().Property(x => x.Awards).HasColumnName("awards");
             modelBuilder.Entity<OmdbData>().Property(x => x.Plot).HasColumnName("plot");
 
-
-
+            
             //user schema
             modelBuilder.Entity<User>().ToTable("user", "user");
             modelBuilder.Entity<User>().HasKey(x => x.Username);
