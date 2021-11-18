@@ -2,7 +2,7 @@
 {
     public class SearchResultExactMatch
     {
-        public char TitleId { get; set; }
+        public string TitleId { get; set; }
         public string PrimaryTitle { get; set; }
     }
 }

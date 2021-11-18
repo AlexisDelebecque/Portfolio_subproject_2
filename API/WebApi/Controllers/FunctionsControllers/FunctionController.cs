@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Domain.FunctionDomain;
 using WebApi.Services;
 using WebApi.Services.FunctionService;
 using WebApi.ViewModels;
@@ -24,19 +25,20 @@ namespace WebApi.Controllers.FunctionsControllers
             _functionService = new FunctionService();
         }
 
-        /*
-        [HttpGet("bestmatch")]
-        //[HttpGet("{strings}")]
+        //[HttpGet("bestmatch")]
+
 
         //public IActionResult BestMatchSearch([FromRoute]string[] strings) //Cant figure out the multiple inputs
-        public IActionResult BestMatchSearch([FromRoute] params string[] strings)
-
+        [HttpGet("{strings}")]
+        public IActionResult BestMatchSearch(string strings)
         {
-            //var titleEpisodes = _functionService.BestMatchSearch(searchStrings);
-            //return Ok(titleEpisodes);
-            return Ok(strings);
+            
+            string[] searchStrings = strings.Split(',');
+            var bestMatches = _functionService.BestMatchSearch(searchStrings);
+            return Ok(bestMatches); //Forstår ikke hvorfor det her ikke fungerer. Noget med typerne. 
+            //return Ok(searchStrings);
         }
-        */
+        /*
         
         [HttpGet("{titleId}")]
         public IActionResult PopularActorInMovie(string titleId)
@@ -45,6 +47,7 @@ namespace WebApi.Controllers.FunctionsControllers
             //return Ok(titleEpisodes);
             return Ok(titleEpisodes);
         }
-        
+        */
     }
+        
 }
