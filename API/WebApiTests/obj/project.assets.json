@@ -7215,32 +7215,34 @@
     ]
   },
   "packageFolders": {
-    "/home/adelebecque/.nuget/packages/": {}
+    "C:\\Users\\depay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/WebApiTests.csproj",
+      "projectUniqueName": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio3\\API\\WebApiTests\\WebApiTests.csproj",
       "projectName": "WebApiTests",
-      "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/WebApiTests.csproj",
-      "packagesPath": "/home/adelebecque/.nuget/packages/",
-      "outputPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApiTests/obj/",
+      "projectPath": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio3\\API\\WebApiTests\\WebApiTests.csproj",
+      "packagesPath": "C:\\Users\\depay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio3\\API\\WebApiTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/adelebecque/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\depay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj": {
-              "projectPath": "/home/adelebecque/Project4/Portfolio_subproject_2/API/WebApi/WebApi.csproj"
+            "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio3\\API\\WebApi\\WebApi.csproj": {
+              "projectPath": "C:\\Users\\depay\\Downloads\\RAWDATA\\Portfolio3\\API\\WebApi\\WebApi.csproj"
             }
           }
         }
@@ -7287,14 +7289,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
